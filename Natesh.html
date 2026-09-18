@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Natesh G — CX, Operations & Business Leader with 18+ years across customer experience, operations, Zendesk, CRM, business leadership and digital transformation.">
+<meta name="theme-color" content="#f2f0ea">
+<title>Natesh G — CX, Operations & Business Leader</title>
+<style>
+:root{
+  --paper:#f2f0ea;--ink:#171715;--soft:#696861;--line:#d2d0c8;
+  --dark:#171715;--lime:#c9ee4a;--white:#fbfaf6;
+  --serif:Georgia,"Times New Roman",serif;
+  --sans:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --max:1240px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.018;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");z-index:20}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+::selection{background:var(--ink);color:var(--lime)}
+.wrap{width:min(calc(100% - 48px),var(--max));margin:auto}
+.topline{height:4px;background:var(--ink)}
+nav{height:82px;border-bottom:1px solid var(--line);display:flex;align-items:center;background:rgba(242,240,234,.94);position:sticky;top:0;z-index:15;backdrop-filter:blur(12px)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{font-weight:900;letter-spacing:-.08em;font-size:21px}
+.brand i{font-style:normal;color:#718f16}
+.navlinks{display:flex;align-items:center;gap:27px;font-size:12px;text-transform:uppercase;letter-spacing:.1em}
+.navlinks a{position:relative}
+.navlinks a:after{content:"";position:absolute;left:0;bottom:-8px;width:0;height:1px;background:var(--ink);transition:.25s}
+.navlinks a:hover:after{width:100%}
+.menu{display:none;border:0;background:none;font-size:23px}
+.hero{min-height:calc(100vh - 86px);display:flex;align-items:flex-end;padding:76px 0 70px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(280px,.45fr);gap:50px;width:100%}
+.kicker,.section-label{font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:800}
+.kicker{margin-bottom:28px}
+.hero h1{font-size:clamp(58px,9.3vw,138px);line-height:.84;letter-spacing:-.09em;font-weight:800;max-width:1000px;margin:0}
+.hero h1 em{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.07em}
+.hero-side{border-top:1px solid var(--ink);padding-top:15px;align-self:end}
+.hero-side p{margin:0 0 28px;max-width:310px;font-size:16px;line-height:1.45}
+.availability{display:flex;align-items:center;gap:9px;font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+.dot{width:7px;height:7px;background:#718f16;border-radius:50%;display:inline-block}
+.scroll-note{margin-top:50px;color:var(--soft);font-size:11px;text-transform:uppercase;letter-spacing:.16em}
+.intro{background:var(--dark);color:var(--white);padding:120px 0}
+.intro-grid{display:grid;grid-template-columns:1fr 2fr;gap:80px}
+.intro .section-label{color:var(--lime)}
+.intro h2{font-size:clamp(34px,5.3vw,72px);line-height:1;letter-spacing:-.065em;font-weight:650;margin:0;max-width:940px}
+.intro h2 span{color:#8f8f89}
+.rule-section{padding:105px 0;border-bottom:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:1fr 3fr;gap:60px;margin-bottom:55px}
+.section-label{color:var(--soft)}
+.section-title{font-size:clamp(38px,5.2vw,70px);line-height:.95;letter-spacing:-.07em;margin:0;font-weight:750}
+.section-title small{display:block;font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.04em;font-size:.72em;margin-top:8px}
+.expertise{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.expertise article{padding:27px 28px 34px 0;border-right:1px solid var(--line);min-height:230px}
+.expertise article+article{padding-left:28px}
+.expertise article:nth-child(3n){border-right:0}
+.expertise .num{font-size:11px;color:var(--soft);margin-bottom:55px}
+.expertise h3{font-size:22px;letter-spacing:-.035em;margin:0 0 11px}
+.expertise p{color:var(--soft);max-width:310px;margin:0;font-size:14px}
+.impact{display:grid;grid-template-columns:1fr 2fr;gap:60px}
+.impact-intro p{color:var(--soft);max-width:320px}
+.stats{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink)}
+.stat{padding:25px 0 30px;border-bottom:1px solid var(--line)}
+.stat:nth-child(odd){padding-right:35px;border-right:1px solid var(--line)}
+.stat:nth-child(even){padding-left:35px}
+.stat .value{font-size:clamp(48px,6vw,86px);line-height:.9;letter-spacing:-.075em;font-weight:750}
+.stat .label{font-size:12px;color:var(--soft);margin-top:15px;max-width:230px}
+.stat .note{font-size:10px;text-transform:uppercase;letter-spacing:.09em;color:#8a887f;margin-top:6px}
+.work-list{border-top:1px solid var(--ink)}
+.work-row{display:grid;grid-template-columns:120px 1.1fr 1fr 120px;gap:28px;padding:28px 0;border-bottom:1px solid var(--line);align-items:start}
+.work-row .year{font-size:11px;color:var(--soft);letter-spacing:.08em}
+.work-row h3{font-size:25px;letter-spacing:-.045em;margin:0 0 4px}
+.work-row .role{font-size:12px;color:var(--soft)}
+.work-row p{margin:0;color:var(--soft);font-size:13px;max-width:500px}
+.work-row .tag{text-align:right;font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--soft)}
+.timeline{border-top:1px solid var(--ink)}
+.timeline-row{display:grid;grid-template-columns:150px 1fr 2fr;gap:35px;padding:25px 0;border-bottom:1px solid var(--line)}
+.timeline-date{font-size:11px;color:var(--soft);text-transform:uppercase;letter-spacing:.08em}
+.timeline-role{font-weight:750;font-size:17px;letter-spacing:-.025em}
+.timeline-company{color:var(--soft);font-size:13px;margin-top:3px}
+.timeline-detail{font-size:13px;color:var(--soft);max-width:620px}
+.credentials{display:grid;grid-template-columns:1.2fr .8fr;gap:100px}
+.cred-block h3{font-size:12px;text-transform:uppercase;letter-spacing:.15em;margin:0 0 18px}
+.cred-item{display:grid;grid-template-columns:1fr auto;gap:25px;border-top:1px solid var(--line);padding:17px 0}
+.cred-item strong{font-size:14px}
+.cred-item span{font-size:11px;color:var(--soft);text-align:right}
+.insights{background:#e6e3da}
+.blog-list{border-top:1px solid var(--ink)}
+.blog-row{display:grid;grid-template-columns:120px 1.1fr 1.3fr 100px;gap:30px;padding:32px 0;border-bottom:1px solid #c9c6bc;align-items:start}
+.blog-row .date{font-size:11px;color:var(--soft);text-transform:uppercase;letter-spacing:.08em}
+.blog-row h3{font-size:28px;line-height:1.05;letter-spacing:-.045em;margin:0}
+.blog-row p{font-size:13px;color:#62615b;margin:0;max-width:560px}
+.read{font-size:11px;text-transform:uppercase;letter-spacing:.1em;text-align:right;font-weight:750}
+.read span{display:inline-block;transition:transform .2s}
+.blog-row:hover .read span{transform:translate(4px,-4px)}
+.contact{background:var(--dark);color:var(--white);padding:115px 0 80px}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}
+.contact .section-label{color:var(--lime)}
+.contact h2{font-size:clamp(54px,8vw,110px);line-height:.86;letter-spacing:-.08em;margin:0}
+.contact h2 em{font-family:var(--serif);font-weight:400}
+.contact-copy{align-self:end}
+.contact-copy p{color:#99988f;max-width:440px;font-size:16px}
+.email{display:inline-block;font-size:clamp(22px,3vw,38px);letter-spacing:-.04em;margin-top:28px;border-bottom:1px solid #666;padding-bottom:5px}
+.email:hover{color:var(--lime);border-color:var(--lime)}
+footer{background:var(--dark);color:#777;border-top:1px solid #30302d;padding:20px 0 28px;font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+.footer-inner{display:flex;justify-content:space-between;gap:20px}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:none}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--lime);z-index:30}
+@media(max-width:900px){
+ .wrap{width:min(calc(100% - 34px),var(--max))}
+ .navlinks{display:none;position:absolute;top:82px;left:0;right:0;background:var(--paper);border-bottom:1px solid var(--line);padding:18px 17px;flex-direction:column;align-items:flex-start;gap:17px}
+ .navlinks.open{display:flex}.menu{display:block}
+ .hero-grid,.intro-grid,.impact,.credentials,.contact-grid{grid-template-columns:1fr}
+ .hero{padding-top:65px;min-height:auto;padding-bottom:85px}
+ .hero h1{font-size:clamp(57px,15vw,105px)}
+ .hero-side{margin-top:45px}
+ .section-head{grid-template-columns:1fr;gap:22px}
+ .expertise{grid-template-columns:1fr}
+ .expertise article,.expertise article+article{padding:24px 0;border-right:0;border-bottom:1px solid var(--line);min-height:auto}
+ .expertise .num{margin-bottom:28px}
+ .work-row{grid-template-columns:80px 1fr}
+ .work-row p{grid-column:2}.work-row .tag{display:none}
+ .timeline-row{grid-template-columns:90px 1fr}.timeline-detail{grid-column:2}
+ .blog-row{grid-template-columns:75px 1fr}.blog-row p{grid-column:2}.read{text-align:left;grid-column:2}
+ .credentials{gap:60px}
+ .contact-copy{margin-top:25px}
+}
+@media(max-width:560px){
+ .wrap{width:min(calc(100% - 28px),var(--max))}
+ nav{height:70px}.navlinks{top:70px}
+ .hero h1{font-size:18vw}
+ .intro,.contact{padding:75px 0}
+ .rule-section{padding:75px 0}
+ .stat .value{font-size:54px}
+ .stat:nth-child(odd){padding-right:18px}.stat:nth-child(even){padding-left:18px}
+ .blog-row h3{font-size:24px}
+ .footer-inner{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+ html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<div class="topline"></div>
+
+<nav>
+  <div class="wrap nav-inner">
+    <a class="brand" href="#home">Natesh<span> </span>G</a>
+    <div class="navlinks" id="navlinks">
+      <a href="#about">About</a><a href="#expertise">Expertise</a><a href="#impact">Impact</a>
+      <a href="#experience">Experience</a><a href="#credentials">Credentials</a><a href="#insights">Thoughts</a><a href="#contact">Contact</a>
+    </div>
+    <button class="menu" id="menu" aria-label="Open navigation" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<main id="home">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker reveal">Natesh G / CX, Operations &amp; Business Leader</div>
+      <h1 class="reveal">Making the <em>customer</em> journey work.</h1>
+    </div>
+    <aside class="hero-side reveal">
+      <p>18+ years across customer experience, operations, business leadership, technology and transformation — connecting people, process and systems to better business outcomes.</p>
+      <div class="availability"><span class="dot"></span> CX / Operations / Business Leadership</div>
+      <div class="scroll-note">Scroll to explore ↓</div>
+    </aside>
+  </div>
+</section>
+
+<section class="intro" id="about">
+  <div class="wrap intro-grid">
+    <div class="section-label">01 / About</div>
+    <h2 class="reveal">Customer experience is not a function sitting beside the business. <span>It is how the business is experienced.</span></h2>
+  </div>
+</section>
+
+<section class="rule-section" id="expertise">
+ <div class="wrap">
+  <div class="section-head">
+    <div class="section-label">02 / Expertise</div>
+    <h2 class="section-title reveal">Where experience meets execution.<small>People × Process × Technology</small></h2>
+  </div>
+  <div class="expertise">
+   <article class="reveal"><div class="num">01</div><h3>CX &amp; Customer Success</h3><p>Customer journeys, retention, VoC, CSAT, service operations and lifecycle experience.</p></article>
+   <article class="reveal"><div class="num">02</div><h3>Operations &amp; Leadership</h3><p>Distributed teams, business operations, process optimisation, stakeholder management and execution.</p></article>
+   <article class="reveal"><div class="num">03</div><h3>Zendesk &amp; CRM</h3><p>Implementation, optimisation, integrations, omnichannel workflows and support infrastructure.</p></article>
+   <article class="reveal"><div class="num">04</div><h3>Transformation</h3><p>Digital transformation, service redesign and practical technology adoption around real business needs.</p></article>
+   <article class="reveal"><div class="num">05</div><h3>Consulting &amp; Presales</h3><p>Solution consulting, client engagement, advisory, partner deployments and business conversations.</p></article>
+   <article class="reveal"><div class="num">06</div><h3>Product &amp; Delivery</h3><p>Product-management support, project management, Agile/SCRUM, JIRA and cross-functional delivery.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="rule-section" id="impact">
+ <div class="wrap impact">
+   <div class="impact-intro">
+     <div class="section-label">03 / Selected impact</div>
+     <p style="margin-top:24px">Outcomes documented in Natesh's professional experience and master profile. Where a number is specific to an organisation, the attribution is kept explicit.</p>
+   </div>
+   <div class="stats">
+     <div class="stat reveal"><div class="value">18+</div><div class="label">Years across CX, operations, technology, consulting and business leadership.</div></div>
+     <div class="stat reveal"><div class="value">400+</div><div class="label">People led across multiple locations and time zones.</div></div>
+     <div class="stat reveal"><div class="value">2.5×</div><div class="label">Conversion increase at Anushvi Constructions following onboarding and touchpoint changes.</div><div class="note">Anushvi Constructions</div></div>
+     <div class="stat reveal"><div class="value">10%</div><div class="label">Net profit per project account reported after changes at Anushvi Constructions.</div><div class="note">Anushvi Constructions</div></div>
+   </div>
+ </div>
+</section>
+
+<section class="rule-section" id="work">
+ <div class="wrap">
+  <div class="section-head">
+    <div class="section-label">04 / Selected career</div>
+    <h2 class="section-title reveal">Built across functions,<br>not inside one box.</h2>
+  </div>
+  <div class="work-list">
+   <a class="work-row reveal" href="#experience"><div class="year">2024—NOW</div><div><h3>Anushvi Constructions</h3><div class="role">General Manager — Customer Experience &amp; Operations</div></div><p>CX and operations leadership, onboarding and touchpoint optimisation, VoC and business performance. Documented outcomes include 2.5× conversion and 10% net profit per project account.</p><div class="tag">CX / Ops</div></a>
+   <a class="work-row reveal" href="#experience"><div class="year">2022—2024</div><div><h3>Independent Advisory</h3><div class="role">CX &amp; CRM Consultant</div></div><p>CX/CRM consulting, advisory and partner engagements, including support infrastructure, multichannel operations and SLA governance.</p><div class="tag">Advisory</div></a>
+   <a class="work-row reveal" href="#experience"><div class="year">2019—2022</div><div><h3>Dazeworks / Altudo</h3><div class="role">Zendesk &amp; Client Solutions Leadership</div></div><p>Practice, business operations and customer success leadership across Zendesk, client solutions, lifecycle, onboarding and global delivery.</p><div class="tag">Zendesk</div></a>
+   <a class="work-row reveal" href="#experience"><div class="year">2007—2017</div><div><h3>Technical &amp; Customer Operations</h3><div class="role">Dell / Acetrix / Mantra / Kore.ai</div></div><p>Progression through technical support, escalation leadership and customer-facing technology roles — the foundation for a broader CX and operations career.</p><div class="tag">Foundation</div></a>
+  </div>
+ </div>
+</section>
+
+<section class="rule-section" id="experience">
+ <div class="wrap">
+  <div class="section-head">
+    <div class="section-label">05 / Experience</div>
+    <h2 class="section-title reveal">18+ years of <em style="font-family:var(--serif);font-weight:400">range.</em></h2>
+  </div>
+  <div class="timeline">
+   <div class="timeline-row reveal"><div class="timeline-date">Nov 2024 — Present</div><div><div class="timeline-role">General Manager — Customer Experience &amp; Operations</div><div class="timeline-company">Anushvi Constructions</div></div><div class="timeline-detail">CX and operations leadership; onboarding and touchpoint optimisation; VoC; business performance. Documented outcomes include 2.5× conversion and 10% net profit per project account.</div></div>
+   <div class="timeline-row reveal"><div class="timeline-date">Oct 2022 — Aug 2024</div><div><div class="timeline-role">CX &amp; CRM Consultant</div><div class="timeline-company">Independent Advisory / Partner Engagements</div></div><div class="timeline-detail">CX/CRM consulting and advisory work, partner deployments, support infrastructure and SLA governance across customer-facing operations.</div></div>
+   <div class="timeline-row reveal"><div class="timeline-date">Dec 2021 — Oct 2022</div><div><div class="timeline-role">Head of Business — Zendesk</div><div class="timeline-company">Dazeworks Technologies</div></div><div class="timeline-detail">Business operations, customer success, Zendesk/CX practices, lifecycle and onboarding, with global delivery responsibilities.</div></div>
+   <div class="timeline-row reveal"><div class="timeline-date">Oct 2019 — Dec 2021</div><div><div class="timeline-role">Practice Manager — Zendesk &amp; Client Solutions</div><div class="timeline-company">Altudo</div></div><div class="timeline-detail">Zendesk practice and client solutions leadership spanning CX, business operations and global delivery.</div></div>
+   <div class="timeline-row reveal"><div class="timeline-date">Sep 2017 — Sep 2019</div><div><div class="timeline-role">Business &amp; CRM Consultant</div><div class="timeline-company">Freelance</div></div><div class="timeline-detail">Business and CRM consulting engagements supporting customer-facing processes and technology.</div></div>
+   <div class="timeline-row reveal"><div class="timeline-date">Sep 2015 — Sep 2017</div><div><div class="timeline-role">Associate Technical Lead</div><div class="timeline-company">Kore.ai</div></div><div class="timeline-detail">Technical leadership, customer-facing support and high-stakes escalation management.</div></div>
+   <div class="timeline-row reveal"><div class="timeline-date">2009 — 2015</div><div><div class="timeline-role">Technical Support Lead / Senior Support Engineer</div><div class="timeline-company">Mantra Technologies / Acetrix Solutions</div></div><div class="timeline-detail">Technical support, troubleshooting and customer-facing operations across progressively senior support roles.</div></div>
+   <div class="timeline-row reveal"><div class="timeline-date">2007 — 2009</div><div><div class="timeline-role">Technical Support Expert</div><div class="timeline-company">Dell International Services</div></div><div class="timeline-detail">Technical customer support at the start of an 18+ year career spanning support, CX, technology and business leadership.</div></div>
+  </div>
+ </div>
+</section>
+
+<section class="rule-section" id="credentials">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="section-label">06 / Credentials</div>
+   <h2 class="section-title reveal">A career grounded in <em style="font-family:var(--serif);font-weight:400">practice.</em></h2>
+  </div>
+  <div class="credentials">
+   <div class="cred-block">
+    <h3>Certifications</h3>
+    <div class="cred-item"><strong>Zendesk Certified Support Administrator</strong><span>Zendesk / 2020</span></div>
+    <div class="cred-item"><strong>Certified Scrum Master</strong><span>Scrum Alliance / 2019</span></div>
+    <div class="cred-item"><strong>Dell Certified Systems Engineer — Desktops</strong><span>Dell / 2008–09</span></div>
+    <div class="cred-item"><strong>Dell Certified Systems Engineer — Portables</strong><span>Dell / 2008–09</span></div>
+   </div>
+   <div class="cred-block">
+    <h3>Education</h3>
+    <div class="cred-item"><strong>Graduate Diploma in Business Management</strong><span>2009–2012</span></div>
+    <p style="color:var(--soft);font-size:13px;margin-top:7px">Indian School of Business Management and Administration</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="rule-section insights" id="insights">
+ <div class="wrap">
+  <div class="section-head">
+   <div class="section-label">07 / Natesh's Thoughts</div>
+   <h2 class="section-title reveal">Writing from the <em style="font-family:var(--serif);font-weight:400">field.</em></h2>
+  </div>
+  <div class="blog-list">
+   <a class="blog-row reveal" href="https://thoughts.natesh.info/2026/09/cx-department-business.html" target="_blank" rel="noopener noreferrer">
+    <div class="date">17 Sep 2026</div>
+    <h3>CX = Department ❌ Business ✅</h3>
+    <p>Why customer experience cannot be reduced to a department, tool or metric — and how people, process, technology and trust shape the experience of the whole business.</p>
+    <div class="read">Read article <span>↗</span></div>
+   </a>
+   <a class="blog-row reveal" href="https://thoughts.natesh.info/2026/09/the-human-side-of-construction-why-cx.html" target="_blank" rel="noopener noreferrer">
+    <div class="date">15 Sep 2026</div>
+    <h3>The Human Side of Construction: Why CX Matters</h3>
+    <p>A practical look at trust in construction: clear scope and budgets, proactive project updates, decision-making, site management, problem ownership and what happens after handover.</p>
+    <div class="read">Read article <span>↗</span></div>
+   </a>
+  </div>
+  <p style="margin-top:22px;font-size:11px;text-transform:uppercase;letter-spacing:.1em"><a href="https://thoughts.natesh.info/" target="_blank" rel="noopener noreferrer">View all thoughts ↗</a></p>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap">
+  <div class="contact-grid">
+   <div>
+    <div class="section-label">08 / Contact</div>
+    <h2 class="reveal">Let's talk<br>about <em>what's next.</em></h2>
+   </div>
+   <div class="contact-copy">
+    <p>For CX, operations, business leadership, consulting or transformation conversations, reach out directly.</p>
+    <a class="email" href="mailto:contact@natesh.info">contact@natesh.info</a>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap footer-inner">
+  <span>© 2026 Natesh G</span><span>CX · Operations · Business Leadership</span>
+ </div>
+</footer>
+
+<script>
+const menu=document.getElementById('menu');
+const links=document.getElementById('navlinks');
+menu.addEventListener('click',()=>{
+ const open=links.classList.toggle('open');
+ menu.setAttribute('aria-expanded',open);
+ menu.textContent=open?'×':'☰';
+});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+ links.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='☰';
+}));
+
+const progress=document.getElementById('progress');
+function updateProgress(){
+ const max=document.documentElement.scrollHeight-innerHeight;
+ progress.style.width=(max>0?(scrollY/max)*100:0)+'%';
+}
+addEventListener('scroll',updateProgress,{passive:true});updateProgress();
+
+const observer=new IntersectionObserver((entries)=>{
+ entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')});
+},{threshold:.08});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
