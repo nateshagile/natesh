@@ -524,6 +524,12 @@ nav{
   border-top:1px solid var(--ink)
 }
 
+.blog-loading{
+  padding:32px 0;
+  color:var(--soft);
+  font-size:13px
+}
+
 .blog-row{
   display:grid;
   grid-template-columns:120px 1.1fr 1.3fr 100px;
@@ -1498,59 +1504,11 @@ footer{
 
     </div>
 
-    <div class="blog-list">
+    <div class="blog-list" id="blog-list">
 
-      <a
-        class="blog-row reveal"
-        href="https://thoughts.natesh.info/2026/09/cx-department-business.html"
-        target="_blank"
-        rel="noopener noreferrer">
-
-        <div class="date">
-          17 Sep 2026
-        </div>
-
-        <h3>
-          CX = Department ❌ Business ✅
-        </h3>
-
-        <p>
-          Why customer experience cannot be reduced to a department, tool or
-          metric — and how people, process, technology and trust shape the
-          experience of the whole business.
-        </p>
-
-        <div class="read">
-          Read article <span>↗</span>
-        </div>
-
-      </a>
-
-      <a
-        class="blog-row reveal"
-        href="https://thoughts.natesh.info/2026/09/the-human-side-of-construction-why-cx.html"
-        target="_blank"
-        rel="noopener noreferrer">
-
-        <div class="date">
-          15 Sep 2026
-        </div>
-
-        <h3>
-          The Human Side of Construction: Why CX Matters
-        </h3>
-
-        <p>
-          A practical look at trust in construction: clear scope and budgets,
-          proactive project updates, decision-making, site management,
-          problem ownership and what happens after handover.
-        </p>
-
-        <div class="read">
-          Read article <span>↗</span>
-        </div>
-
-      </a>
+      <div class="blog-loading">
+        Loading latest thoughts...
+      </div>
 
     </div>
 
@@ -1660,6 +1618,11 @@ links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
   menu.textContent='☰';
 }));
 
+
+/* =========================================
+   SCROLL PROGRESS
+========================================= */
+
 const progress=document.getElementById('progress');
 
 function updateProgress(){
@@ -1670,13 +1633,200 @@ function updateProgress(){
 addEventListener('scroll',updateProgress,{passive:true});
 updateProgress();
 
+
+/* =========================================
+   REVEAL ANIMATION
+========================================= */
+
 const observer=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
-    if(e.isIntersecting)e.target.classList.add('in')
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+    }
   });
 },{threshold:.08});
 
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el=>{
+  observer.observe(el);
+});
+
+
+/* =========================================
+   BLOGGER — DYNAMIC THOUGHTS
+========================================= */
+
+function nateshThoughts(json){
+
+  const blogList=document.getElementById('blog-list');
+
+  if(!blogList){
+    return;
+  }
+
+  blogList.innerHTML='';
+
+  if(
+    !json.feed ||
+    !json.feed.entry ||
+    !json.feed.entry.length
+  ){
+
+    const emptyMessage=document.createElement('div');
+
+    emptyMessage.className='blog-loading';
+
+    emptyMessage.textContent='No recent thoughts available.';
+
+    blogList.appendChild(emptyMessage);
+
+    return;
+  }
+
+  const posts=json.feed.entry.slice(0,3);
+
+  posts.forEach(post=>{
+
+    const title=
+      post.title && post.title.$t
+        ? post.title.$t
+        : 'Untitled';
+
+    let link='https://thoughts.natesh.info/';
+
+    if(post.link){
+
+      const alternateLink=post.link.find(item=>
+        item.rel==='alternate'
+      );
+
+      if(
+        alternateLink &&
+        alternateLink.href
+      ){
+        link=alternateLink.href;
+      }
+    }
+
+    let formattedDate='';
+
+    if(
+      post.published &&
+      post.published.$t
+    ){
+
+      const published=new Date(post.published.$t);
+
+      if(!isNaN(published)){
+
+        formattedDate=published.toLocaleDateString(
+          'en-GB',
+          {
+            day:'2-digit',
+            month:'short',
+            year:'numeric'
+          }
+        );
+      }
+    }
+
+    let description='';
+
+    if(
+      post.summary &&
+      post.summary.$t
+    ){
+      description=post.summary.$t;
+    }
+    else if(
+      post.content &&
+      post.content.$t
+    ){
+      description=post.content.$t;
+    }
+
+    const temp=document.createElement('div');
+    temp.innerHTML=description;
+
+    description=temp.textContent
+      .replace(/\s+/g,' ')
+      .trim();
+
+    if(description.length>190){
+      description=description.substring(0,190).trim()+'…';
+    }
+
+    const article=document.createElement('a');
+
+    article.className='blog-row reveal';
+    article.href=link;
+    article.target='_blank';
+    article.rel='noopener noreferrer';
+
+    const dateElement=document.createElement('div');
+    dateElement.className='date';
+    dateElement.textContent=formattedDate;
+
+    const titleElement=document.createElement('h3');
+    titleElement.textContent=title;
+
+    const descriptionElement=document.createElement('p');
+    descriptionElement.textContent=description;
+
+    const readElement=document.createElement('div');
+    readElement.className='read';
+    readElement.textContent='Read article ';
+
+    const arrow=document.createElement('span');
+    arrow.textContent='↗';
+    readElement.appendChild(arrow);
+
+    article.appendChild(dateElement);
+    article.appendChild(titleElement);
+    article.appendChild(descriptionElement);
+    article.appendChild(readElement);
+
+    blogList.appendChild(article);
+
+    requestAnimationFrame(()=>{
+      article.classList.add('in');
+    });
+
+  });
+
+}
+
+
+/* =========================================
+   LOAD BLOGGER JSONP FEED
+========================================= */
+
+const bloggerScript=document.createElement('script');
+
+bloggerScript.src=
+  'https://thoughts.natesh.info/feeds/posts/default' +
+  '?alt=json-in-script' +
+  '&max-results=3' +
+  '&callback=nateshThoughts';
+
+bloggerScript.onerror=()=>{
+
+  const blogList=document.getElementById('blog-list');
+
+  if(!blogList){
+    return;
+  }
+
+  blogList.innerHTML='';
+
+  const errorMessage=document.createElement('div');
+  errorMessage.className='blog-loading';
+  errorMessage.textContent='Unable to load recent thoughts.';
+
+  blogList.appendChild(errorMessage);
+
+};
+
+document.body.appendChild(bloggerScript);
 
 </script>
 
